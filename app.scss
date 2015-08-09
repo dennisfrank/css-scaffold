@@ -9,8 +9,9 @@
 // /*------------------------------------*\
 //     #SETTINGS
 // \*------------------------------------*/
-@import "settings/colors";
-@import "settings/typography";
+$layer: "settings";
+
+@import "_IMPORTS/settings.imports";
 
 @import "inuit-defaults/settings.defaults";
 @import "inuit-responsive-settings/settings.responsive";
