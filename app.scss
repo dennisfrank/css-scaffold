@@ -124,7 +124,6 @@ $inuit-namespace: "u-";
 
 @import "inuit-clearfix/trumps.clearfix";
 @import "inuit-headings-trumps/trumps.headings";
-@import "inuit-smallprint/trumps.smallprint";
 @import "inuit-widths/trumps.widths";
 @import "inuit-widths-responsive/trumps.widths-responsive";
 // @import "inuit-pull/trumps.pull";
@@ -143,7 +142,7 @@ $inuit-namespace: "u-";
 // Reset inuit namespace earlier because
 // u- prefix already exists in the following files
 $inuit-namespace: "";
-//s@import "inuit-smallprint/trumps.smallprint";
+// @import "inuit-smallprint/trumps.smallprint";
 @import "inuit-spacing/trumps.spacing";
 @import "inuit-spacing-responsive/trumps.spacing-responsive";
 
