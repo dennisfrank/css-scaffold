@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    #INTERNATIONALIZATION
+\*------------------------------------*/
+
+
+
+/**
+ * Quotes
+ */
+
+/* English quotation marks */
+:lang(en) {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/* German quotation marks */
+:lang(de) {
+  quotes: "\201E" "\201C" "\201A" "\2018";
+}
+
+/* French quotation marks */
+:lang(fr) {
+  quotes: "\00AB" "\00BB" "\2039" "\203A";
+}
+
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
+}
+
