@@ -2,7 +2,9 @@
     #PAGE
 \*------------------------------------*/
 
-// Assign the $base-font-family.
+
 html {
-    font-family: $base-font-family;
+  font-family: $font-family-base;
+  font-weight: $font-weight-regular;
+  color: $color-ui;
 }
