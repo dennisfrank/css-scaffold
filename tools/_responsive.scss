@@ -1,0 +1,26 @@
+// /*------------------------------------*\
+//     $RESPONSIVE MIXIN
+// \*------------------------------------*/
+
+// Mixin to quickly generate different responsive selectors
+// based upon the breakpoints defined in `breakpoints` map.
+@mixin responsive($element, $exclude: 'retina') {
+
+    // Loop through our previously-defined breakpoints.
+    @each $breakpoint, $mediaquery in $breakpoints {
+
+        // Exclude retina media-query
+        @if ($breakpoint != #{$exclude}) {
+
+          // Build media-query based selector
+          @media #{$mediaquery} {
+            #{$element}-#{$breakpoint} {
+              @content;
+            }
+          }
+
+        } // Close retina check.
+
+    } // Close breakpoints loop.
+
+}
