@@ -61,6 +61,8 @@
 // /*------------------------------------*\
 //     #OBJECTS
 // \*------------------------------------*/
+$inuit-namespace: "o-";
+
 // @import "inuit-block/objects.block";
 // @import "inuit-box/objects.box";
 // @import "inuit-buttons/objects.buttons";
@@ -83,9 +85,22 @@
 
 
 
+
+// /*------------------------------------*\
+//     #VENDOR
+// \*------------------------------------*/
+$inuit-namespace: "";
+
+@import "_IMPORTS/vendor.imports";
+
+
+
+
+
 // /*------------------------------------*\
 //     #COMPONENTS
 // \*------------------------------------*/
+$inuit-namespace: "c-";
 @import "_IMPORTS/components.imports";
 
 
@@ -104,6 +119,8 @@
 // /*------------------------------------*\
 //     #TRUMPS
 // \*------------------------------------*/
+$inuit-namespace: "u-";
+
 @import "inuit-clearfix/trumps.clearfix";
 @import "inuit-headings-trumps/trumps.headings";
 @import "inuit-smallprint/trumps.smallprint";
@@ -113,8 +130,6 @@
 // @import "inuit-responsive-pull/trumps.pull-responsive";
 // @import "inuit-push/trumps.push";
 // @import "inuit-responsive-push/trumps.push-responsive";
-@import "inuit-spacing/trumps.spacing";
-@import "inuit-spacing-responsive/trumps.spacing-responsive";
 // @import "inuit-float/trumps.helper.float";
 // @import "inuit-responsive-float/trumps.helper.float-responsive";
 // @import "inuit-font-weight/trumps.helper.font-weight";
@@ -123,10 +138,21 @@
 // @import "inuit-responsive-text-align/trumps.helper.text-align-responsive";
 // @import "inuit-hide/trumps.hide";
 @import "inuit-print/trumps.print";
+
+// Reset inuit namespace earlier because
+// u- prefix already exists in the following files
+$inuit-namespace: "";
+//s@import "inuit-smallprint/trumps.smallprint";
+@import "inuit-spacing/trumps.spacing";
+@import "inuit-spacing-responsive/trumps.spacing-responsive";
+
 @import "_IMPORTS/trumps.imports";
 
 
 
 
 
+// /*------------------------------------*\
+//     #SHAME
+// \*------------------------------------*/
 @import "shame";
