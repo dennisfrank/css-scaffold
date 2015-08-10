@@ -3,4 +3,38 @@
 //\*------------------------------------*/
 
 // Base font family.
-$base-font-family:          'Lato', sans-serif;
+$base-font: "base" !default;
+$base-font-path: "../fonts/base/Fonts" !default;
+$font-family-base: "#{$base-font}", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+
+// Font weights
+$font-weight-light: 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-bold: 700 !default;
+
+
+// Font sizes
+$font-size--base: 16px !default;
+
+$font-size--xxs: 11 / 16 * $font-size--base !default; // 11px
+$font-size--xs: 12 / 16 * $font-size--base !default; // 12px
+$font-size--s: 14 / 16 * $font-size--base !default; // 14px
+
+$font-size--l: 18 / 16 * $font-size--base !default; // 18px
+$font-size--xl: 22 / 16 * $font-size--base !default; // 22px
+$font-size--xxl: 26 / 16 * $font-size--base !default; // 26px
+
+
+// Line height
+$line-height--base: $font-size--base * 1.5 !default;
+
+
+// Heading font sizes
+$font-size--h1: $font-size--xxl !default;
+$font-size--h2: $font-size--xl !default;
+$font-size--h3: $font-size--l !default;
+$font-size--h4: $font-size--base !default;
+$font-size--h5: $font-size--base !default;
+$font-size--h6: $font-size--base !default;

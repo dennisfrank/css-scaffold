@@ -1,0 +1,26 @@
+///*------------------------------------*\
+//    #ICONS
+//\*------------------------------------*/
+
+$icon-font-family: "tuev-nord-icons" !default;
+
+// Fonts
+// Variables are beeing used in objects.icons
+$icon-src--truetype: "../fonts/tuev-nord-icons/fonts/tuev-nord-icons.ttf" !default;
+
+// IconSizes in px
+$icon-sizes: (
+  auto: 1em, // required
+  xs: 11px,
+  s: 14px,
+  base: 16px, // required
+  l: 20px,
+  xl: 32px,
+  xxl: 64px,
+) !default;
+
+// Icons
+$icons: (
+  // brand_twitter: "\e60c",
+  // ui_arrow_down: "↓"
+) !default;

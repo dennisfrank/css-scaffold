@@ -1,0 +1,17 @@
+///*------------------------------------*\
+//    #BREAKPOINTS
+//\*------------------------------------*/
+
+$bp-lap: 45em; // 720px
+$bp-palm: $bp-lap - .0625;
+$bp-desk: 62.75em; // 1004px
+$bp-desk-wide: 73em; // 1168px
+$breakpoints: (
+    "palm"          "screen and (max-width: #{$bp-palm})",
+    "lap"           "screen and (min-width: #{$bp-lap}) and (max-width: #{$bp-desk - .0625})",
+    "lap-and-up"    "screen and (min-width: #{$bp-lap})",
+    "portable"      "screen and (max-width: #{$bp-desk - .0625})",
+    "desk"          "screen and (min-width: #{$bp-desk})",
+    "desk-wide"     "screen and (min-width: #{$bp-desk-wide})",
+    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
+) !default;
