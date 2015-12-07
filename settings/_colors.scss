@@ -10,6 +10,7 @@
 // reusable variables below.
 $color-black: #000 !default;
 $color-white: #fff !default;
+$color-gray: #ccc !default;
 $color-blue: #0080ff !default;
 $color-red: #ff0000 !default;
 
@@ -22,6 +23,7 @@ $color-red: #ff0000 !default;
 // --------------------------------------------------------
 $color-ui: $color-black !default;
 $color-ui-invert: $color-white !default;
+$color-body: $color-gray !default;
 $color-page: $color-white !default;
 $color-brand: $color-red !default;
 $color-action: $color-blue !default;
@@ -44,5 +46,5 @@ $inuit-base-background-color: $color-page !default;
 // Components Palette
 // --------------------------------------------------------
 $color-link: $color-action !default;
-$color-link-hover: darken($color-link, 15) !default;
+$color-link-hover: mix($color-black, $color-link, 20%) !default;
 
