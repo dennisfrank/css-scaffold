@@ -4,37 +4,50 @@
 
 // Base font family.
 $base-font: "base" !default;
-$base-font-path: "../fonts/base/Fonts" !default;
-$font-family-base: "#{$base-font}", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+// $base-font-path: "../fonts/base/Fonts" !default;
+$ff-base: "#{$base-font}", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 
 // Font weights
-$font-weight-light: 300 !default;
-$font-weight-regular: 400 !default;
-$font-weight-medium: 500 !default;
-$font-weight-bold: 700 !default;
+$fw-light: 100 !default;
+$fw-normal: 300 !default;
+$fw-regular: $fw-normal !default;
+$fw-medium: 500 !default;
+$fw-bold: 700 !default;
 
 
 // Font sizes
-$font-size--base: 16px !default;
-
-$font-size--xxs: 11 / 16 * $font-size--base !default; // 11px
-$font-size--xs: 12 / 16 * $font-size--base !default; // 12px
-$font-size--s: 14 / 16 * $font-size--base !default; // 14px
-
-$font-size--l: 18 / 16 * $font-size--base !default; // 18px
-$font-size--xl: 22 / 16 * $font-size--base !default; // 22px
-$font-size--xxl: 26 / 16 * $font-size--base !default; // 26px
+// http://www.modularscale.com/?16&px&1.333&sass&text
+$fs-xxs: ms(-3) !default;
+$fs-xs: ms(-2) !default;
+$fs-xs: ms(-1) !default;
+$fs-base: ms() !default;
+$fs-l: ms(1) !default;
+$fs-xl: ms(2) !default;
+$fs-xxl: ms(3) !default;
+$fs-xxxl: ms(4) !default;
 
 
 // Line height
-$line-height--base: $font-size--base * 1.5 !default;
+$lh-base: $fs-base * 1.4 !default;
 
 
 // Heading font sizes
-$font-size--h1: $font-size--xxl !default;
-$font-size--h2: $font-size--xl !default;
-$font-size--h3: $font-size--l !default;
-$font-size--h4: $font-size--base !default;
-$font-size--h5: $font-size--base !default;
-$font-size--h6: $font-size--base !default;
+$fs-h1: $fs-xxxl !default;
+$fs-h2: $fs-xxl !default;
+$fs-h3: $fs-xl !default;
+$fs-h4: $fs-base !default;
+$fs-h5: $fs-base !default;
+$fs-h6: $fs-base !default;
+
+
+// Inuit
+$inuit-base-font-size: $fs-base !default;
+$inuit-base-line-height: $lh-base !default;
+
+$inuit-heading-size-1: $fs-h1;
+$inuit-heading-size-2: $fs-h2;
+$inuit-heading-size-3: $fs-h3;
+$inuit-heading-size-4: $fs-h4;
+$inuit-heading-size-5: $fs-h5;
+$inuit-heading-size-6: $fs-h6;

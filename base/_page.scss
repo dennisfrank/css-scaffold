@@ -4,7 +4,8 @@
 
 
 html {
-  font-family: $font-family-base;
-  font-weight: $font-weight-regular;
+  font-family: $ff-base;
+  font-weight: $fw-normal;
   color: $color-ui;
+  background: $color-body;
 }
