@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+
+h1, .heading-alpha {
+  @include font-size($fs-h1);
+  font-weight: $fw-normal;
+}
+
+h2, .heading-beta {
+  @include font-size($fs-h2);
+  font-weight: $fw-normal;
+}
+
+h3, .heading-gamma {
+  @include font-size($fs-h3);
+  font-weight: $fw-normal;
+}
+
+h4, .heading-delta {
+  @include font-size($fs-h4);
+  font-weight: $fw-normal;
+}
+
+h5, .heading-epsilon {
+  @include font-size($fs-h5);
+  font-weight: $fw-normal;
+}
+
+h6, .heading-epsilon {
+  @include font-size($fs-h6);
+  font-weight: $fw-normal;
+}
