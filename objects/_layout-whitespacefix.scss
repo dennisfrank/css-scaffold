@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    #LAYOUT-WHITESPACEFIX
+\*------------------------------------*/
+
+// Fighting the space between inline block layout elementes.
+// See discussion at https://github.com/csswizardry/inuit.css/issues/170
+// and http://css-tricks.com/fighting-the-space-between-inline-block-elements/
+
+.o-layout {
+  font-size: 0;
+
+  .o-layout__item {
+    @include inuit-font-size($inuit-base-font-size, none);
+  }
+}
