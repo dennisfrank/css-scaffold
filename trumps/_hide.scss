@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    #HIDE
+\*------------------------------------*/
+
+$inuit-enable-hide: false !default;
+$inuit-enable-responsive-hide: false !default;
+
+
+@if ($inuit-enable-hide-js == true) {
+
+  /* Hide helper class */
+  .u-hide {
+    display: none;
+  }
+
+}
+
+
+
+@if ($inuit-enable-responsive-hide == true) {
+
+  /* Responsive hide helper classes */
+  @include responsive() {
+    .u-hide\@#{$breakpoint} {
+      display: none;
+    }
+
+  }
+
+}

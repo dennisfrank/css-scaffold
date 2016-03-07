@@ -1,0 +1,114 @@
+// /*------------------------------------*\
+//     #RATIO-BOX MIXINS
+// \*------------------------------------*/
+
+////
+/// Maintain Aspect Ratio with Inline-Block Pseudo Element
+///
+/// @author Dennis Frank
+////
+
+
+
+/// Flexible Aspect Ratio Mixin
+///
+/// 1. Allow side by side positioning of helper pseudo
+///    element and child element by using inline-block.
+/// 2. Remove gaps between inline-block element by setting
+///    font-size:0 for parent element.
+/// 3. Reset font-size for child element.
+///    (For IE8 support add px fallback.)
+/// 4. Set vertical align for element content.
+/// 5. Set aspect ratio.
+///
+/// @example scss - Create flex ratio object class
+///   .o-flex-ratio {
+///     @include flex-ratio(4/3, middle);
+///   }
+///
+/// @example markup - Use flex ratio object class
+///   <div class="o-flex-ratio">
+///     <div>
+///       Content…
+///     </div>
+///   </div>
+///
+/// @group objects
+/// @param {Numbers} $ratio [null] - Aspect ratio (e.g. 4/3)
+/// @param {String} $valign [medium] - Vertical align (options: top, bottom, middle, null)
+@mixin ratio-box(
+  $ratio: null,
+  $valign: middle,
+  $debug: null
+  ) {
+
+  position: relative;
+  font-size: 0; // [2]
+
+  // Helper pseudo element
+  &:after {
+    content: "";
+    display: inline-block;   // [1]
+    vertical-align: $valign; // [4]
+
+    @if $ratio {
+      padding-top: 100% / ($ratio); // [5]
+    }
+
+    @if $debug == true {
+      width: 100%;
+      margin-left: -100%;
+      background: rgba(tomato, .5);
+    }
+  }
+
+  // Child element with content
+  > * {
+    box-sizing: border-box;
+    display: inline-block;   // [1]
+    width: 100%;
+    font-size: 1rem; // [3]
+    vertical-align: $valign; // [4]
+  }
+}
+
+
+
+/// Flex ratio vertical alignment mixin
+///
+/// @example scss - Create vertical alignment modifier class
+///   .o-flex-ratio--bottom {
+///     @include flex-ratio-valign(bottom);
+///   }
+///
+/// @example markup - Use vertical alignment modifier class
+///   <div class="o-flex-ratio  o-flex-ratio--bottom">
+///     <div>
+///       Content…
+///     </div>
+///   </div>
+///
+/// @group objects
+/// @param {String} $valign - options: top, bottom, middle
+/// @param {String} $important [null] - Add !important
+@mixin ratio-box-valign(
+  $valign,
+  $important: null
+  ) {
+
+  @if $important == "important" {
+    $important: !important;
+  }
+
+  &:after,
+  > * {
+    vertical-align: $valign;
+  }
+
+}
+
+
+
+%ratio-box {
+  @include ratio-box;
+}

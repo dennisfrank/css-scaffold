@@ -1,0 +1,143 @@
+/*------------------------------------*\
+    #DISPLAY
+\*------------------------------------*/
+
+$inuit-enable-display-utilities: false !default;
+$inuit-enable-responsive-display-block: false !default;
+$inuit-enable-responsive-display-none: false !default;
+$inuit-enable-responsive-display-inline: false !default;
+$inuit-enable-responsive-display-inline-block: false !default;
+$inuit-enable-responsive-display-table: false !default;
+$inuit-enable-responsive-display-table-cell: false !default;
+$inuit-enable-responsive-display-table-caption: false !default;
+
+
+@if ($inuit-enable-display-utilities == true) {
+
+  /**
+   * Display utilities
+   */
+
+  .u-block { display: block !important; }
+  .u-none { display: none !important; }
+  .u-inline { display: inline-block !important; }
+  .u-inline-block { display: inline-block !important; }
+  .u-table { display: table !important; }
+  .u-table-cell { display: table-cell !important; }
+  .u-table-cell { display: table-caption !important; }
+
+  /* IE9 Hack for display:block in tables */
+  table, tr, td, th {
+    &.u-block {
+      width: 100%\9;
+      float: left\9;
+    }
+  }
+
+}
+
+
+
+@if ($inuit-enable-responsive-display-block == true) {
+
+  /**
+   * Responsive display block
+   */
+  @include responsive() {
+
+    .u-block\@#{$breakpoint} {
+      display: block !important;
+    }
+
+    /* IE9 Hack for tables */
+    table.u-block\@#{$breakpoint},
+    thead.u-block\@#{$breakpoint},
+    tfoot.u-block\@#{$breakpoint},
+    tbody.u-block\@#{$breakpoint},
+    tr.u-block\@#{$breakpoint},
+    th.u-block\@#{$breakpoint},
+    td.u-block\@#{$breakpoint} {
+      width: 100%\9 !important;
+      float: left\9 !important;
+    }
+  }
+
+}
+
+
+
+@if ($inuit-enable-responsive-display-none == true) {
+
+  /**
+   * Responsive display none
+   */
+  @include responsive('.u-none') {
+    display: none !important;
+  }
+
+}
+
+
+
+@if ($inuit-enable-responsive-display-inline == true) {
+
+  /**
+   * Responsive display inline
+   */
+  @include responsive('.u-inline') {
+    display: inline !important;
+  }
+
+}
+
+
+
+@if ($inuit-enable-responsive-display-inline-block == true) {
+
+  /**
+   * Responsive display inline-block
+   */
+  @include responsive('.u-inline-block') {
+    display: inline-block !important;
+  }
+
+}
+
+
+
+@if ($inuit-enable-responsive-display-table == true) {
+
+  /**
+   * Responsive display table
+   */
+  @include responsive('.u-table') {
+    display: table !important;
+  }
+
+}
+
+
+
+@if ($inuit-enable-responsive-display-table-cell == true) {
+
+  /**
+   * Responsive display table-cell
+   */
+  @include responsive('.u-table-cell') {
+    display: table-cell !important;
+  }
+
+}
+
+
+
+@if ($inuit-enable-responsive-display-table-caption == true) {
+
+  /**
+   * Responsive display table-caption
+   */
+  @include responsive('.u-table-caption') {
+    display: table-caption !important;
+  }
+
+}

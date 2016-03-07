@@ -1,0 +1,71 @@
+/*------------------------------------*\
+    #ALIGNMENT
+\*------------------------------------*/
+
+$inuit-enable-alignment: false !default;
+$inuit-enable-responsive-alignment: false !default;
+
+
+
+// Internally used mixin to quickly generate our different variants based upon
+// the breakpoints defined in `settings.responsive`.
+
+@mixin inuit-generate-alignment() {
+
+    // Loop through our previously-defined breakpoints.
+    @each $breakpoint in $breakpoints {
+
+        $inuit-generate-alignment-alias:      nth($breakpoint, 1) !global;
+        $inuit-generate-alignment-condition:  nth($breakpoint, 2);
+
+        // This isn’t ideal, but we definitely don’t want to generate widths
+        // for retina devices. Exclude retina media-qeuries manually.
+        @if ($inuit-generate-alignment-alias != "retina") {
+
+            @include media-query($inuit-generate-alignment-alias) {
+                @content;
+            } // Close media query.
+
+        } // Close retina check.
+
+        // Take the global variable back out of scope.
+        $inuit-generate-alignment-alias: null !global;
+
+    } // Close breakpoints loop.
+
+}
+
+
+@if ($inuit-enable-alignment == true) {
+
+  /**
+   * Alignment helper classes.
+   *
+   */
+
+  .u-a-left       { text-align: left !important; }
+  .u-a-right       { text-align: right !important; }
+  .u-a-center       { text-align: center !important; }
+  .u-a-justify       { text-align: justify !important; }
+
+}
+
+
+
+@if ($inuit-enable-responsive-alignment == true) {
+
+    /**
+     * Responsive alignment helper classes.
+     *
+     */
+
+    @include inuit-generate-alignment() {
+
+        .u-a-left\@#{$inuit-generate-alignment-alias}      { text-align: left !important; }
+        .u-a-right\@#{$inuit-generate-alignment-alias}      { text-align: right !important; }
+        .u-a-center\@#{$inuit-generate-alignment-alias}      { text-align: center !important; }
+        .u-a-justify\@#{$inuit-generate-alignment-alias}      { text-align: justify !important; }
+
+    }
+
+}

@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    #FLOAT-RESPONSIVE
+\*------------------------------------*/
+
+$inuit-enable-float--responsive--left:      false !default;
+$inuit-enable-float--responsive--right:     false !default;
+$inuit-enable-float--responsive--none:      false !default;
+
+
+
+@each $breakpoint in $breakpoints {
+
+    $alias:     nth($breakpoint, 1);
+    $condition: nth($breakpoint, 2);
+
+    // We don’t want to generate responsive float for retina devices.
+    @if ($alias != "retina") {
+
+        @include media-query($alias) {
+
+            @if ($inuit-enable-float--responsive--left == true) {
+
+                /**
+                 * Float left responsive #{$alias}.
+                 */
+                .u-float-left\@#{$alias} {
+                    float: left !important;
+                }
+
+            }
+
+            @if ($inuit-enable-float--responsive--right == true) {
+
+                /**
+                 * Float right responsive #{$alias}.
+                 */
+                .u-float-right\@#{$alias} {
+                    float: right !important;
+                }
+
+            }
+
+            @if ($inuit-enable-float--responsive--none == true) {
+
+                /**
+                 * Float none responsive #{$alias}.
+                 */
+                .u-float-none\@#{$alias} {
+                    float: none !important;
+                }
+
+            }
+
+        } // Close retina check.
+
+    } // Close media query.
+
+} // Close breakpoints loop.

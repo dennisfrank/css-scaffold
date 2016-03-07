@@ -1,0 +1,30 @@
+// /*------------------------------------*\
+//     $EVENT WRAPPER
+// \*------------------------------------*/
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @author Hugo Giraudel
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+/// @link https://github.com/HugoGiraudel/sass-boilerplate/blob/master/stylesheets/utils/_mixins.scss Mixin by Hugo Giraudel
+
+@mixin on-event($self: false) {
+
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+
+}
+

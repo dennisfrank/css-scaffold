@@ -1,0 +1,71 @@
+/*------------------------------------*\
+    #CENTER
+\*------------------------------------*/
+
+$inuit-enable-centering: false !default;
+$inuit-enable-responsive-centering: false !default;
+
+
+
+// Internally used mixin to quickly generate our different variants based upon
+// the breakpoints defined in `settings.responsive`.
+
+@mixin inuit-generate-centering() {
+
+    // Loop through our previously-defined breakpoints.
+    @each $breakpoint in $breakpoints {
+
+        $inuit-generate-centering-alias:      nth($breakpoint, 1) !global;
+        $inuit-generate-centering-condition:  nth($breakpoint, 2);
+
+        // This isn’t ideal, but we definitely don’t want to generate widths
+        // for retina devices. Exclude retina media-qeuries manually.
+        @if ($inuit-generate-centering-alias != "retina") {
+
+            @include media-query($inuit-generate-centering-alias) {
+                @content;
+            } // Close media query.
+
+        } // Close retina check.
+
+        // Take the global variable back out of scope.
+        $inuit-generate-centering-alias: null !global;
+
+    } // Close breakpoints loop.
+
+}
+
+
+@if ($inuit-enable-centering == true) {
+
+  /**
+   * Centering helper classes.
+   *
+   */
+
+  .u-center {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+}
+
+
+
+@if ($inuit-enable-responsive-centering == true) {
+
+    /**
+     * Responsive centering helper classes.
+     *
+     */
+
+    @include inuit-generate-centering() {
+
+        .u-center-#{$inuit-generate-alignment-alias} {
+          margin-right: auto !important;
+          margin-left: auto !important;
+        }
+
+    }
+
+}

@@ -1,0 +1,57 @@
+/*------------------------------------*\
+   #RATIO
+\*------------------------------------*/
+
+$inuit-enable-ratio: false !default;
+$inuit-enable-responsive-ratio: false !default;
+
+
+
+$ratios: (
+  ( 1,  1), // 1/1
+  ( 4,  3), // 4/3
+  (16,  9), // 16/9
+) !default;
+
+
+
+/**
+ * Ratio utility classes
+ */
+@if ($inuit-enable-ratio == true) {
+
+  @each $ratio in $ratios {
+
+    $width: nth($ratio, 1);
+    $height: nth($ratio, 2);
+
+    .u-ratio-#{$width}\/#{$height}:after {
+      @include ratio($width, $height, !important);
+    }
+  }
+}
+
+
+
+
+@if ($inuit-enable-responsive-ratio == true) {
+
+  /**
+   * Responsive ratio utility classes
+   */
+
+  @include responsive() {
+
+    @each $ratio in $ratios {
+
+      $width: nth($ratio, 1);
+      $height: nth($ratio, 2);
+
+      .u-ratio-#{$width}\/#{$height}\@#{$breakpoint}:after {
+        @include ratio($width, $height, !important);
+      }
+
+    }
+  }
+
+}

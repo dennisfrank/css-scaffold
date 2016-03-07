@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    #HIDE-JS
+\*------------------------------------*/
+
+$inuit-enable-hide-js: false !default;
+$inuit-enable-responsive-hide-js: false !default;
+
+
+@if ($inuit-enable-hide-js == true) {
+
+  /* Hide js helper class */
+  .js .u-hide-js {
+    display: none !important;
+  }
+
+  /* Hide no-js helper class */
+  .no-js .u-hide-no-js {
+    display: none !important;
+  }
+
+}
+
+
+
+@if ($inuit-enable-responsive-hide-js == true) {
+
+  /* Responsive hide js/no-js helper classes */
+  @include responsive() {
+
+    .js .u-hide-js\@#{$breakpoint} {
+      display: none !important;
+    }
+
+    .no-js .u-hide-no-js\@#{$breakpoint} {
+      display: none !important;
+    }
+
+  }
+
+}

@@ -1,0 +1,31 @@
+// /*------------------------------------*\
+//     $RATIO
+// \*------------------------------------*/
+
+/// Ratio mxin
+///
+/// @example scss - Create ratio utility class
+///    .u-ratio-16\/9:after {
+///      @include ratio(16, 0, !important);
+///    }
+///
+/// @example markup - Use ratio utility class
+///   <div class="o-flex-ratio  u-ratio-16/9">
+///     <div>
+///       Content…
+///     </div>
+///   </div>
+///
+/// @group tools
+/// @param {Numbers} $width
+/// @param {Numbers} $height
+/// @param {String} $important [null] - Add !important
+@mixin ratio($width, $height, $important: null) {
+
+  @if $important == "important" {
+    $important: !important;
+  }
+
+  padding-top: 100% / ($width / $height) $important;
+
+}

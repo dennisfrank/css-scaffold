@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+
+.u-text {
+  color: $color-ui;
+  text-decoration: none;
+}
+
+
+.u-text\+\+ { font-size: larger  !important; }
+.u-text--   { font-size: smaller !important; }
+
+
+.u-text-xxs   { @include font-size($fs-xxs, false) }
+.u-text-xs    { @include font-size($fs-xs, false) }
+.u-text-s     { @include font-size($fs-s, false) }
+.u-text-base  { @include font-size($fs-base, false) }
+.u-text-l     { @include font-size($fs-l, false) }
+.u-text-xl    { @include font-size($fs-xl, false) }
+.u-text-xxl   { @include font-size($fs-xxl, false) }
+.u-text-xxxl  { @include font-size($fs-xxxl, false) }
+.u-text-xxxxl { @include font-size($fs-xxxxl, false) }
+
+
+.u-text-light { font-weight: $fw-light !important; }
+.u-text-normal { font-weight: $fw-regular !important; }
+.u-text-medium { font-weight: $fw-medium !important; }
+.u-text-bold { font-weight: $fw-bold !important; }

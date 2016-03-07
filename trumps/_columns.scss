@@ -1,0 +1,48 @@
+/*------------------------------------*\
+    #COLUMNS
+\*------------------------------------*/
+
+$inuit-enable-columns: false !default;
+$inuit-enable-responsive-columns: false !default;
+$columns: (1, 2, 3, 4);
+
+.u-columns {
+  column-gap: $spacing-unit;
+}
+
+
+
+@if ($inuit-enable-responsive-columns == true) {
+
+  /**
+   * Columns
+   */
+
+  @each $column in $columns {
+
+    .u-columns--#{$column} {
+      column-count: $column;
+    }
+
+  }
+
+}
+
+
+
+@if ($inuit-enable-responsive-columns == true) {
+
+  /**
+   * Responsive columns
+   */
+
+  @include responsive() {
+    @each $column in $columns {
+      .u-columns--#{$column}\@#{$breakpoint} {
+        column-count: $column;
+      }
+    }
+  }
+
+}
+

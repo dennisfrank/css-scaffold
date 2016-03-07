@@ -1,0 +1,30 @@
+// /*------------------------------------*\
+//     $LINK HELPER
+// \*------------------------------------*/
+
+/// Link helper
+/// @author Dennis Frank
+/// @type {Bool} $self [false] - Link type
+
+@mixin link($type: false) {
+
+  @if $type != 'alt' {
+    color: $color-link;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-link-hover;
+    }
+
+  } @else {
+    color: $color-link-alt;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-link-alt-hover;
+    }
+  }
+
+}
