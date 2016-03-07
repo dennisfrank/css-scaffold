@@ -2,6 +2,14 @@
 //    #TYPOGRAPHY
 //\*------------------------------------*/
 
+// Modular Scale:
+// http://www.modularscale.com/?16&px&1.333&sass&text
+$ms-base: 16px;
+$ms-ratio: 1.33;
+@import "modular-scale/stylesheets/_modular-scale";
+
+
+
 // Base font family.
 $base-font: "base" !default;
 // $base-font-path: "../fonts/base/Fonts" !default;
