@@ -1,0 +1,210 @@
+/*------------------------------------*\
+    #WRAPPERS
+\*------------------------------------*/
+
+$wrapper-max-width:           1024px !default;
+
+$wrapper-padding:             0 !default;
+$wrapper-padding-palm:       $wrapper-padding !default;
+$wrapper-padding-lap:        $wrapper-padding !default;
+$wrapper-padding-lap-and-up: $wrapper-padding !default;
+$wrapper-padding-portable:   $wrapper-padding !default;
+$wrapper-padding-desk:       $wrapper-padding !default;
+$wrapper-padding-desk-wide:  $wrapper-padding !default;
+
+$enable-wrapper-padding-palm:         false !default;
+$enable-wrapper-padding-lap:          false !default;
+$enable-wrapper-padding-lap-and-up:   false !default;
+$enable-wrapper-padding-portable:     false !default;
+$enable-wrapper-padding-desk:         false !default;
+$enable-wrapper-padding-desk-wide:    false !default;
+
+$enable-wrapper-breaker-palm:         false !default;
+$enable-wrapper-breaker-lap:          false !default;
+$enable-wrapper-breaker-lap-and-up:   false !default;
+$enable-wrapper-breaker-portable:     false !default;
+$enable-wrapper-breaker-desk:         false !default;
+$enable-wrapper-breaker-desk-wide:    false !default;
+
+/**
+ * Wrapper
+ */
+.o-wrapper {
+  position: relative;
+  box-sizing: content-box;
+  max-width: $wrapper-max-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $wrapper-padding;
+  padding-left: $wrapper-padding;
+
+  @if ($enable-wrapper-padding-palm == true) {
+    @include media-query(palm) {
+      padding-right: $wrapper-padding-palm;
+      padding-left: $wrapper-padding-palm;
+    }
+  }
+
+  @if ($enable-wrapper-padding-lap == true) {
+    @include media-query(lap) {
+      padding-right: $wrapper-padding-lap;
+      padding-left: $wrapper-padding-lap;
+    }
+  }
+
+  @if ($enable-wrapper-padding-lap-and-up == true) {
+    @include media-query(lap-and-up) {
+      padding-right: $wrapper-padding-lap-and-up;
+      padding-left: $wrapper-padding-lap-and-up;
+    }
+  }
+
+  @if ($enable-wrapper-padding-portable == true) {
+    @include media-query(portable) {
+      padding-right: $wrapper-padding-portable;
+      padding-left: $wrapper-padding-portable;
+    }
+  }
+
+  @if ($enable-wrapper-padding-desk == true) {
+    @include media-query(desk) {
+      padding-right: $wrapper-padding-desk;
+      padding-left: $wrapper-padding-desk;
+    }
+  }
+
+  @if ($enable-wrapper-padding-desk-wide == true) {
+    @include media-query(desk-wide) {
+      padding-right: $wrapper-padding-desk-wide;
+      padding-left: $wrapper-padding-desk-wide;
+    }
+  }
+
+}
+
+
+
+/**
+ * Wrapper breaker
+ */
+.o-wrapper-breaker {
+
+  @media screen and (max-width: $wrapper-max-width + $wrapper-padding * 2) {
+    margin-right: -$wrapper-padding !important;
+    margin-left: -$wrapper-padding !important;
+  }
+
+  @if ($enable-wrapper-padding-palm == true) {
+    @include media-query(palm) {
+      margin-right: -$wrapper-padding-palm !important;
+      margin-left: -$wrapper-padding-palm !important;
+    }
+  }
+
+  @if ($enable-wrapper-padding-lap == true) {
+    @include media-query(lap) {
+      margin-right: -$wrapper-padding-lap !important;
+      margin-left: -$wrapper-padding-lap !important;
+    }
+  }
+
+  @if ($enable-wrapper-padding-lap-and-up == true) {
+    @include media-query(lap-and-up) {
+      margin-right: -$wrapper-padding-lap-and-up !important;
+      margin-left: -$wrapper-padding-lap-and-up !important;
+    }
+  }
+
+  @if ($enable-wrapper-padding-portable == true) {
+    @include media-query(portable) {
+      margin-right: -$wrapper-padding-portable !important;
+      margin-left: -$wrapper-padding-portable !important;
+    }
+  }
+
+  @if ($enable-wrapper-padding-desk == true) {
+    @include media-query(desk) {
+      margin-right: -$wrapper-padding-desk !important;
+      margin-left: -$wrapper-padding-desk !important;
+    }
+  }
+
+  @if ($enable-wrapper-padding-desk-wide == true) {
+    @include media-query(desk-wide) {
+      margin-right: -$wrapper-padding-desk-wide !important;
+      margin-left: -$wrapper-padding-desk-wide !important;
+    }
+  }
+
+}
+
+
+
+/**
+ * Responsive wrapper breakers
+ */
+@if ($enable-wrapper-breaker-palm == true) {
+
+  @include media-query(palm) {
+    .o-wrapper-breaker-palm {
+      margin-right: -$wrapper-padding-palm !important;
+      margin-left: -$wrapper-padding-palm !important;
+    }
+  }
+
+}
+
+@if ($enable-wrapper-breaker-lap == true) {
+
+  @include media-query(lap) {
+    .o-wrapper-breaker-lap {
+      margin-right: -$wrapper-padding-lap !important;
+      margin-left: -$wrapper-padding-lap !important;
+    }
+  }
+
+}
+
+@if ($enable-wrapper-breaker-lap-and-up == true) {
+
+  @include media-query(lap-and-up) {
+    .o-wrapper-breaker-lap-and-up {
+      margin-right: -$wrapper-padding-lap-and-up !important;
+      margin-left: -$wrapper-padding-lap-and-up !important;
+    }
+  }
+
+}
+
+@if ($enable-wrapper-breaker-portable == true) {
+
+  @include media-query(portable) {
+    .o-wrapper-breaker-portable {
+      margin-right: -$wrapper-padding-portable !important;
+      margin-left: -$wrapper-padding-portable !important;
+    }
+  }
+
+}
+
+@if ($enable-wrapper-breaker-desk == true) {
+
+  @include media-query(desk) {
+    .o-wrapper-breaker-desk {
+      margin-right: -$wrapper-padding-desk !important;
+      margin-left: -$wrapper-padding-desk !important;
+    }
+  }
+
+}
+
+@if ($enable-wrapper-breaker-desk-wide == true) {
+
+  @include media-query(desk-wide) {
+    .o-wrapper-breaker-desk-wide {
+      margin-right: -$wrapper-padding-desk-wide !important;
+      margin-left: -$wrapper-padding-desk-wide !important;
+    }
+  }
+
+}
