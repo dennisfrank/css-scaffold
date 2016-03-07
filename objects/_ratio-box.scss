@@ -1,0 +1,54 @@
+/*------------------------------------*\
+    #RATIO-BOX
+\*------------------------------------*/
+
+ /**
+  * Ratio box object
+  */
+ .o-ratio-box {
+   @include ratio-box();
+ }
+
+
+
+ /**
+  * Strict ratio object modifier
+  * Element content gets always resized to ratio object dimensions
+  *
+  * Example 1:
+  *
+  * <div class="o-ratio-box  o-ratio-box--strict">
+  *   <div>...</div>
+  * </div>
+  *
+  *
+  * Example 2:
+  *
+  * <div class="o-ratio-box">
+  *   <div class="o-ratio-box__inner--strict">...</div>
+  * </div>
+  *
+  */
+.o-ratio-box--strict > *,
+.o-ratio-box__inner--strict {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+
+ /**
+  * Vertical alignment modifiers
+  */
+ .o-ratio-box--top {
+   @include ratio-box-valign(top);
+ }
+ .o-ratio-box--bottom {
+   @include ratio-box-valign(bottom);
+ }
+ .o-ratio-box--middle {
+   @include ratio-box-valign(middle);
+ }
