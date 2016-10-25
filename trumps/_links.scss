@@ -15,19 +15,6 @@
 
 
 
-.u-link--alt {
-  color: $color-link-alt !important;
-
-  &:hover,
-  &:focus,
-  a:hover &,
-  a:focus & {
-    color: $color-link-alt-hover !important;
-  }
-}
-
-
-
 .u-link--stealth {
   text-decoration: inherit;
   color: inherit !important;
@@ -39,5 +26,3 @@
     color: $color-link-hover !important;
   }
 }
-
-
